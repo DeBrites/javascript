@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <style>
+        input {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &hArr; US$</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <section id="sect">
+        <br> Clique no botão acima para iniciar.
+    </section>
+    <script>
+        let dol = Number(window.prompt(`Antes de mais nada. Quanto está a cotação do dólar agora?`)).toFixed(2)
+        function clicar() {
+            let rea = Number(window.prompt(`Quanto R$ você tem na carteira?`)).toFixed(2)
+            let din = Number(rea/dol).toFixed(2)
+            let sec = window.document.getElementById('sect')
+            sec.innerHTML = `<br>Com os seus ${rea}R$, você consegue comprar ${din}US$ quando a cotação do dólar está em ${dol}US$.`
+        }
+    </script>
+</body>
+</html>

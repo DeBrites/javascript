@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        input {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <input type="button" value="Converter" onclick="clica()">
+    <section id="sect">
+        <h2 id="text"></h2>
+
+    </section>
+    <script>
+        function clica() {
+            let temp = Number(window.prompt(`Digite uma temperatura em °C (Celsius):`))
+            let kev = Number(temp + 273.15)
+            let far = Number((9*temp + 160)/5)
+            let te = window.document.getElementById('text')
+            let divi = window.document.getElementById('sect')
+            te.innerHTML = `A temperatura de ${temp}°C, corresponde a... <br> <hr>`
+            divi.innerHTML += `${kev}°K (Kelvin)<br>`
+            divi.innerHTML += `${far}°F (Fahrenheit)`             
+        }
+    </script>
+</body>
+</html>

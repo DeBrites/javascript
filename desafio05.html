@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        input {
+            padding: 30px;
+        }
+    </style>
+</head>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter um número" onclick=clicar()>
+    <section id="sect">
+        <h2 id="text"></h2>
+
+    </section>
+<body>
+    <script>
+        function clicar(){
+            let num = Number(window.prompt(`Digite a distância em metros(m):`))
+            let te = window.document.getElementById('text')
+            te.innerHTML = `A distância de ${num} metros, corresponde a...<br> <hr>`
+            let divi = window.document.getElementById('sect')
+            divi.innerHTML += `${num/1000} quilômetros (Km)<br>`
+            divi.innerHTML += `${num/100} Hectômetros (Hm)<br>`
+            divi.innerHTML += `${num/10} Decâmetros (Dam)<br>`
+            divi.innerHTML += `${num*10} Decimetros (dm)<br>`
+            divi.innerHTML += `${num*100} Centímetros (cm)<br>`
+            divi.innerHTML += `${num*1000} Milímetros (mm)<br>`
+        }
+    </script>
+    
+</body>
+</html>

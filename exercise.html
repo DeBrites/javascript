@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Javascript</title>
+</head>
+<body>
+    <h1>O que aprendemos com Javascript?</h1>
+    <input type="button" value="Introdução é aqui!" onclick="clica()">
+    <input type="button" value="Que? Matemática envolvida?" onclick="clicar()">
+    <input type="button" value="Limpar" onclick="limpa()">
+    <section id="sect">
+
+    </section>
+    <script>
+        alert(`Bem-Vindos ao meu Website!`)
+        let divi = window.document.getElementById('sect')
+        function clica() {
+            window.alert(`Javascript pode criar estes tipos de infomações adicionais.`)
+            let nome = window.prompt(`Qual é o seu nome?`)
+            window.alert(`Olá ${nome}, é um prazer te conhecer!`)
+            let ano = window.prompt(`Quantos anos você tem?`)
+            divi.innerHTML = `Você tem ${ano} anos, ${nome}. Viva cada momento intensamente e obrigado por acompanhar até aqui! &#x1F596 <br>`
+        }
+        function clicar() {
+            window.alert(`Com Javascript podemos utilizar a matemática em nosso favor, deixe-me dar uns exemplos...`)
+            let num = window.prompt(`Mê dê qualquer número e eu o entregarei na hora o dobro e a metade dele!`)
+            let dob = num*2
+            let met = num/2
+            window.alert(`O dobro de ${num} é ${dob} e a metade de ${num} é ${met}!`)
+            window.alert(`Ainda não está impressionado? Beleza, então segue comigo!`)
+            let num1 = Number(window.prompt(`Mê dê um numero inteiro qualquer: `))
+            let num2 = Number(window.prompt(`Mê dê mais um número inteiro qualquer: `))
+            let somas = Number(num1 + num2)
+            let media = somas/2
+            divi.innerHTML += `<br>A soma de <mark>${num1}</mark> e <mark>${num2}</mark> dá <mark>${somas}</mark>, e a média deles dá <mark>${media}</mark>!<br>  <br><mark><em>Obrigado pela paciência</em></mark> de me acompanhar até aqui, você não precisou fazer nenhuma conta e eu mesmo tomei o trabalho de fazer para você em questão de segundos!<br><hr>`
+            divi.innerHTML += `Ah, e antes que eu me esqueça! <br>O valor absoluto do seu primeiro número dado ${num} vai dar ${Math.abs(num)}<br>A sua parte inteira é ${Math.trunc(num)} <br>O valor inteiro mais próximo é ${Math.round(num)}<br>A sua raiz quadrada é ${Math.sqrt(num)}<br>A sua raiz cúbica é ${Math.cbrt(num)}<br>O valor de ${num}<sup>2</sup> é ${Math.pow(num,2)}<br>E, por fim, o valor de ${num}<sup>3</sup> é ${Math.pow(num,3)}`    
+        }
+        function limpa() {
+            divi.innerHTML = null
+        }
+    </script>
+</body>
+</html>

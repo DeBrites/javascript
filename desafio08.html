@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando Desconto de 10%</title>
+    <style>
+        input {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="clicar()">
+    <section id="sect">
+        <h1 id="text"></h1>
+        <br>Clique no botão acima para iniciar.
+    </section>
+    <script>
+        function clicar() {
+            let prod = window.prompt(`Qual é o produto que você está comprando?`)
+             let pre = Number(window.prompt(`Qual é o preço de ${prod}?`)).toFixed(2)
+            let des = Number(pre/10).toFixed(2)
+            let fim = Number(pre-des).toFixed(2)
+            let te = window.document.getElementById('text')
+            let divi = window.document.getElementById('sect')
+            te.innerHTML = `Calculando o desconto de 10% para ${prod}!`
+            divi.innerHTML = `<br> O preço original era de R$ ${pre}. <br>
+            <br>Você acaba de ganhar R$ ${des} de desconto (-10%). <br>
+            <br>No fim, você vai pagar R$ ${fim} no produto ${prod}. `
+        }
+    </script>
+</body>
+</html>
